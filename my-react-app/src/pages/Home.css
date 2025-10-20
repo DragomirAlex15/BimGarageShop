@@ -1,0 +1,58 @@
+/* Reset margin/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Georgia", serif;
+}
+
+/* Wrapper principal */
+.home-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container video + conținut */
+.home-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Video pe fundal */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Conținut centrat */
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.home-content h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.home-content p {
+  font-size: 1.8rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
