@@ -1,40 +1,34 @@
-/* Reset margin/padding */
+/* ===== RESET ===== */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Georgia", serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Wrapper principal */
+/* ===== WRAPPER PRINCIPAL ===== */
 .home-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-/* Container video + conținut */
-.home-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* Video pe fundal */
-.background-video {
-  position: absolute;
+/* ===== VIDEO DE FUNDAL ===== */
+.video {
+  position: absolute;      /* video-ul este în spatele conținutului */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;       /* păstrează proporțiile și acoperă ecranul */
   z-index: -1;
+  object-position: center center;
 }
 
-/* Conținut centrat */
+/* ===== CONȚINUT CENTRAL ===== */
 .home-content {
   position: absolute;
   top: 50%;
@@ -43,16 +37,53 @@ html, body {
   text-align: center;
   color: white;
   z-index: 1;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .home-content h1 {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .home-content p {
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-top: 1rem;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+  .home-content h1 {
+    font-size: 3rem;
+  }
+  .home-content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 2rem;
+  }
+  .home-content p {
+    font-size: 1rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+  }
 }
