@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
-    <nav>
-      <a href="#">Acasă</a>
-      <a href="#">Produse</a>
-      <a href="#">Contact</a>
+    <nav className="navbar">
+      <Link to="/">Acasă</Link>
+      <Link to="/products">Produse</Link>
+      <Link to="/contact">Contact</Link>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
